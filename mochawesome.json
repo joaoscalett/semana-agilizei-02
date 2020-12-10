@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-12-10T21:16:43.065Z",
-    "end": "2020-12-10T21:17:03.052Z",
-    "duration": 19987,
+    "start": "2020-12-10T21:19:35.677Z",
+    "end": "2020-12-10T21:19:56.523Z",
+    "duration": 20846,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "341210fc-88ef-458a-abf8-908795270327",
+      "uuid": "dec520cf-b5d5-4073-ad52-c31ceca11f93",
       "title": "",
       "fullFile": "cypress/integration/compra.spec.js",
       "file": "cypress/integration/compra.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e93e98b4-eccd-4d65-8d77-d945a396cfe4",
+          "uuid": "02b790a0-227a-4cb8-ad15-b3a76697fbc7",
           "title": "Compra",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Efetuar uma compra de produto",
               "fullTitle": "Compra Efetuar uma compra de produto",
               "timedOut": null,
-              "duration": 19895,
+              "duration": 20813,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.backgroundLogin();\ncy.visit('/');\nvar nomeProduto = 'Faded Short Sleeve T-shirts';\ncy.contains(nomeProduto).trigger('mouseover');\ncy.contains('Faded Short Sleeve T-shirts').parent() // h5\n.siblings('div.button-container').children('a').first() // add to cart\n.click();\ncy.get('.icon-ok').parent() // h2\n.should('contain.text', 'Product successfully added to your shopping cart');\ncy.get('span#layer_cart_product_title').should('contain.text', nomeProduto);\ncy.get(\".button-container a[href$='controller=order']\").click();\ncy.get(\".cart_navigation a[href$='order&step=1']\").click(); // login se não tiver setado o cookie\n// cy.get('#email').type('semana-agilizei@email.com');\n// cy.get('#passwd').type('123456');\n// cy.get('button#SubmitLogin').click();\n// [type=checkbox]#addressesAreEquals\ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'checked', 'checked');\ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'name', 'same');\ncy.get('button[name=processAddress]').click();\ncy.get('[type=checkbox]#cgv').check();\ncy.get('button[name=processCarrier]').click();\ncy.get('.bankwire').click();\ncy.get('.cart_navigation button[type=submit]').find('span').contains('I confirm my order').click(); // cy.pause();\ncy.get('.cheque-indent strong').should('contain.text', 'Your order on My Store is complete.'); // 1. Capturar o texto do box\n// 2. filtrar o texto do box pra extrair somente o ID do pedido\n// 3. armazenar o ID do pedido de alguma forma\n// 4. obter o ID do pedido armazenado de alguma forma\ncy.get('div.box').invoke('text').then(function (text) {\n  console.log(text);\n  console.log(text.match(/[A-Z][A-Z]+/g)[1]);\n  cy.writeFile('cypress/fixtures/pedido.json', {\n    id: \"\".concat(text.match(/[A-Z][A-Z]+/g)[1])\n  });\n});\ncy.get(\".cart_navigation a[href$='history']\").click();\ncy.readFile('cypress/fixtures/pedido.json').then(function (pedido) {\n  cy.get('tr.first_item .history_link a').should('contain.text', pedido.id);\n});",
               "err": {},
-              "uuid": "36637751-51c3-4b9c-9b76-6051d44fb05e",
-              "parentUUID": "e93e98b4-eccd-4d65-8d77-d945a396cfe4",
+              "uuid": "63866b15-d3e7-4272-99e8-24fb2f087c07",
+              "parentUUID": "02b790a0-227a-4cb8-ad15-b3a76697fbc7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "36637751-51c3-4b9c-9b76-6051d44fb05e"
+            "63866b15-d3e7-4272-99e8-24fb2f087c07"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19895,
+          "duration": 20813,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
